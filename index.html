@@ -1,0 +1,659 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Portfolio &mdash; </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="freehtml5.co" />
+
+	
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		/* Navigation Buttons - Stylish Enhancement */
+/* Navigation Buttons - Compact & Visible */
+.nav-buttons {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+}
+
+/* Individual Button Styling */
+.nav-button {
+    background: rgba(0, 0, 0, 0.8); /* Dark for contrast */
+    color: #ffffff; /* White text for visibility */
+    border: 2px solid #ffffff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Hover Effects */
+.nav-button:hover {
+    background: #ffffff;
+    color: #ff7e00; /* Orange to match theme */
+    border: 2px solid #ff7e00;
+    transform: scale(1.05);
+}
+
+/* Mobile-Friendly Adjustments */
+@media screen and (max-width: 768px) {
+    .nav-buttons {
+        bottom: 15px;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-button {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+}
+
+		
+		/* Section transition animations */
+		.animate-on-scroll {
+			opacity: 0;
+			transform: translateY(30px);
+			transition: opacity 0.8s ease, transform 0.8s ease;
+		}
+		
+		.animate-on-scroll.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		
+		/* Enhanced parallax effect for header */
+		#fh5co-header.enhanced-parallax {
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		
+		/* Subtle background patterns for sections */
+		#fh5co-about {
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNmOWY5ZjkiPjwvcmVjdD4KPC9zdmc+');
+			background-repeat: repeat;
+		}
+		
+		#fh5co-skills {
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmZmZmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZT0iI2Y1ZjVmNSI+PC9wYXRoPgo8L3N2Zz4=');
+		}
+		
+		#fh5co-started {
+			position: relative;
+		}
+		
+		#fh5co-started:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0idHJhbnNwYXJlbnQiPjwvcmVjdD4KPHBhdGggZD0iTTI5LjMzIDI5LjMzTDMwLjY3IDMwLjY3TTMwLjY3IDI5LjMzTDI5LjMzIDMwLjY3IiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIj48L3BhdGg+Cjwvc3ZnPg==');
+			opacity: 0.2;
+			z-index: 0;
+		}
+		
+		#fh5co-started .container {
+			position: relative;
+			z-index: 1; 
+		}
+	</style>
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	<!-- Navigation Buttons -->
+	<div class="nav-buttons">
+		<button class="nav-button" onclick="scrollToSection('fh5co-about')">
+			<i class="fas fa-user"></i> About
+		</button>
+		<button class="nav-button" onclick="scrollToSection('fh5co-resume')">
+			<i class="fas fa-briefcase"></i> Experience
+		</button>
+		<button class="nav-button" onclick="scrollToSection('fh5co-work')">
+			<i class="fas fa-folder-open"></i> Projects
+		</button>
+		<button class="nav-button" onclick="window.open('https://drive.google.com/uc?export=download&id=12m5ILO5uWxA-fs6n4nx-Sit1ff9Vqq81', '_blank')">
+			<i class="fas fa-file-alt"></i> Resume
+		</button>
+	</div>
+	
+	<div id="page">	
+	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t js-fullheight">
+						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+							<div class="profile-thumb floating-profile" style="background: url(images/muditt.png);"></div>
+							<h1><span>Mudit Dixit</span></h1>
+							<h3><span id="role-container"><span id="role"></span></span></h3>
+							<p>
+								<p>
+									<ul class="fh5co-social-icons">
+										<li><a href="https://github.com/moodymudy" target="_blank"><i class="fab fa-github"></i></a></li>
+										<li><a href="https://linkedin.com/in/moodymudy" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+									</ul>
+								</p>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="fh5co-about" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>About Me</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<ul class="info">
+						<li><span class="first-block">Full Name:</span><span class="second-block">Mudit Dixit</span></li>
+						<li><span class="first-block">Phone:</span><span class="second-block">+16892498924</span></li>
+						<li><span class="first-block">Email:</span><span class="second-block">muditdixit3000@gmail.com</span></li>
+						<li><span class="first-block">Address:</span><span class="second-block">Austin, Texas, United States</span></li>
+					</ul>
+				</div>
+				<div class="col-md-8">
+					<h2>Hello There!</h2>
+					<p>I am a passionate software developer with a Master’s degree in Computer Engineering from the University of Central Florida and a Bachelor’s degree from NIIT University, India. With experience as a Software Engineer Intern at IBM and an NGO, as well as a Graduate Teaching Assistant at UCF’s virtual lab, I have gained a strong foundation in software development, AI, and machine learning.</p>
+					<p>I specialize in full-stack development and AI-powered applications, leveraging technologies like Python, JavaScript, Node.js, React, PostgreSQL, and Flask. My expertise extends to machine learning libraries such as TensorFlow, PyTorch, scikit-learn, and OpenCV. I am passionate about building scalable, intelligent solutions and am currently working on end-to-end project development while continuously expanding my skill set.</p>
+					<p>I am actively seeking full-time opportunities in software development where I can contribute innovative solutions and drive impactful projects.</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="https://github.com/moodymudy" target="_blank"><i class="icon-github2"></i></a></li>
+							<li><a href="https://linkedin.com/in/moodymudy" target="_blank"><i class="icon-linkedin2"></i></a></li>
+						</ul>
+						
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-resume" class="fh5co-bg-color">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>My Resume</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0">
+					<ul class="timeline">
+						<li class="timeline-heading text-center animate-box">
+							<div><h3>Work Experience</h3></div>
+						</li>
+						
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Software Developer</h3>
+									<span class="company">Community Dreams Foundation - Feb, 2025 - Current</span>
+								</div>
+								<div class="timeline-body">
+									<p>● Optimized webpage loading time by 27% through caching, asynchronous loading, SQL query optimization, and minimizing React re-renders.</p>
+									<p>● Improved mobile page rendering by 25% by refactoring CSS/JavaScript, consolidating styles, and implementing responsive design with CSS3 media queries.</p>
+									<p>● Assisted in updating the CMS to ensure accurate information on the webpage.</p>
+								</div>
+							</div>
+						</li>
+						
+						<li class="animate-box timeline-inverted">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Graduate Research Assistant</h3>
+									<span class="company">Virtual Readability Lab - Aug, 2024 - Dec, 2024</span>
+								</div>
+								<div class="timeline-body">
+									<p>● Developed and implemented an innovative system leveraging OpenAI's advanced language generation capabilities, resulting in up to a 22x increase in passage generation speed for age groups and difficulty levels.</p>
+									<p>● Automated item analysis using Python scripts, reducing analysis time by 78% and enhancing data accuracy.</p>
+									<p>● Conducting prompt engineering to compare and evaluate various large language models, enabling informed decision-making.</p>
+								</div>
+							</div>
+						</li>
+						
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Graduate Teaching Assistant</h3>
+									<span class="company">Department of Physics - Feb, 2023 - August, 2024</span>
+								</div>
+								<div class="timeline-body">
+									<p>● Conducted Physics lab and discussion sessions for over 400 students.</p>
+									<p>● Streamlined grading processes with Python automation, improving efficiency and saving significant time.</p>
+									<p>● Participated in and promoted team building activities amongst various students.</p>
+								</div>
+							</div>
+						</li>
+						
+						<li class="animate-box timeline-inverted">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Software Engineering Intern</h3>
+									<span class="company">IBM - Jan, 2022 - July, 2022</span>
+								</div>
+								<div class="timeline-body">
+									<p>● Utilized CI/CD pipelines for automated security testing and threat detection, while developing RESTful APIs to integrate threat intelligence feeds into security workflows.</p>
+									<p>● Designed and developed web-based dashboards using JavaScript and React to visualize real-time security insights, improving monitoring and incident response efficiency by 20%.</p>
+									<p>● Collaborated with development teams to implement a secure microservices architecture, helped optimizing web applications and security systems for scalability and performance by 30%.</p>
+								</div>
+							</div>
+						</li>
+					
+						<br>
+<li class="timeline-heading text-center animate-box">
+    <div><h3>Education</h3></div>
+</li>
+<li class="animate-box timeline-unverted">
+	<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+	<div class="timeline-panel">
+		<div class="timeline-heading">
+			<h3 class="timeline-title">MS in Computer Engineering</h3>
+			<span class="company">University of Central Florida - 2022 - 2024</span>
+		</div>
+		<div class="timeline-body">
+			<p>● Master's in Computer Engineering (Specialization in Intelligent Systems and Machine Learning): Focused on applying AI and ML to complex problems in intelligent systems.</p>
+			<p>● Key Courses: Design and Analysis of Algorithms, OOP, Machine Learning, AI, and Software Engineering.</p>
+		</div>
+	</div>
+</li>
+<li class="animate-box timeline-inverted">
+	<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+	<div class="timeline-panel">
+		<div class="timeline-heading">
+			<h3 class="timeline-title">B.Tech in Computer Science</h3>
+			<span class="company">NIIT University - 2018 - 2022</span>
+		</div>
+		<div class="timeline-body">
+			<p>● Focused on the fundamentals of AI and computer science principles.</p>
+			<p>● Key Courses: Operating Systems, Theory of Computation, and AI.</p>
+		</div>
+	</div>
+</li>
+			    	</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="fh5co-skills" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Skills</h2>
+				</div>
+			</div>
+			<div class="row row-pb-md">
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="95"><span><strong>Python</strong>95%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="85"><span><strong>Javascript</strong>85%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="90"><span><strong>SQL</strong>90%</span></div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="80"><span><strong>ReactJS</strong>80%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="85"><span><strong>Node.js</strong>85%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="90"><span><strong>Java</strong>85%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="85"><span><strong>OpenAI</strong>85%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="90"><span><strong>PostgreSQL</strong>90%</span></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="progress-wrap">
+						<h3><span class="name-left">HTML5/CSS3</span><span class="value-right">95%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-1 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:95%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Tableu</span><span class="value-right">90%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-2 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Flask</span><span class="value-right">85%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-3 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Android</span><span class="value-right">75%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-4 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="progress-wrap">
+						<h3><span class="name-left">Go</span><span class="value-right">85%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-5 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Matplotlib</span><span class="value-right">85%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-striped active" role="progressbar"
+						  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Linux</span><span class="value-right">75%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-1 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Git</span><span class="value-right">89%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-3 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:89%">
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-work" class="fh5co-bg-dark">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Projects</h2>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Project Card -->
+				<div class="col-md-4 text-center col-padding animate-box project-card">
+					<a href="https://github.com/moodymudy/CodeIt" class="project-link">
+						<div class="project-image" style="background-image: url(images/codeit.png);"></div>
+						<div class="desc">
+							<h3>Code IT</h3>
+							<p>Code IT uses four LLMs to generate Python code and compare performance, helping users select the best code.</p>
+						</div>
+					</a>
+				</div>
+	
+				<div class="col-md-4 text-center col-padding animate-box project-card">
+					<a href="https://mudit-expense-tracker.vercel.app" class="project-link">
+						<div class="project-image" style="background-image: url(images/expensetracker.png);"></div>
+						<div class="desc">
+							<h3>Expense Tracker</h3>
+							<p>An expense tracker app built with React, JavaScript, HTML, and CSS to help users manage their finances.</p>
+						</div>
+					</a>
+				</div>
+	
+				<div class="col-md-4 text-center col-padding animate-box project-card">
+					<a href="https://github.com/Ritavdas/GuruHub?tab=readme-ov-file" class="project-link">
+						<div class="project-image" style="background-image: url(images/guruhub.png);"></div>
+						<div class="desc">
+							<h3>GuruHub.com</h3>
+							<p>An app that helps students find reliable tutors based on qualifications, reviews, and learning needs.</p>
+						</div>
+					</a>
+				</div>
+	
+				<div class="col-md-12 text-center">
+					<div class="row justify-content-center">
+						<div class="col-md-4 text-center col-padding animate-box project-card">
+							<a href="https://www.ijert.org/research/gait-signature-for-identification-systems-IJERTV10IS070322.pdf" class="project-link">
+								<div class="project-image" style="background-image: url(images/gait.png);"></div>
+								<div class="desc">
+									<h3>GAIT Signature for Identification Systems</h3>
+									<p>GAIT recognition system using image moments, multi-view analysis, and machine learning to enhance biometric identification accuracy and efficiency.</p>
+								</div>
+							</a>
+						</div>
+			
+						<div class="col-md-4 text-center col-padding animate-box project-card">
+							<a href="https://github.com/moodymudy/Capstone-Inventory_Management" class="project-link">
+								<div class="project-image" style="background-image: url(images/portfolio-5.jpg);"></div>
+								<div class="desc">
+									<h3>Capstone Inventory Management</h3>
+									<p>This is a Python-based system that helps businesses efficiently track and manage inventory, ensuring smooth operations and accurate stock control.</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+
+	
+	
+	<div id="fh5co-started" class="fh5co-bg-dark">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Hire Me!</h2>
+					<p>I am an enthusiastic learner with a strong passion for technology, constantly seeking opportunities to grow and develop my skills as an aspiring software engineer. With a drive for innovation and problem-solving, I’m eager to contribute and learn in a dynamic environment.</p>
+					<p><a href="https://publuu.com/flip-book/248588/588288" class="btn btn-default btn-lg">Resume</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Easy PieChart -->
+	<script src="js/jquery.easypiechart.min.js"></script>
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="js/google_map.js"></script>
+	
+	<!-- Main -->
+	<script src="js/main.js"></script>
+	<script>
+		function scrollToSection(sectionId) {
+			const section = document.getElementById(sectionId);
+			const headerHeight = 0;
+			const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
+			
+			window.scrollTo({
+				top: sectionPosition - headerHeight,
+				behavior: 'smooth'
+			});
+			
+			// Prevent default action if called from an anchor
+			if(event) {
+				event.preventDefault();
+			}
+		}
+		
+		// Function to handle section animations on scroll
+		function animateSections() {
+			const sections = document.querySelectorAll('.animate-on-scroll');
+			
+			sections.forEach(section => {
+				const sectionTop = section.getBoundingClientRect().top;
+				const windowHeight = window.innerHeight;
+				
+				if (sectionTop < windowHeight * 0.85) {
+					section.classList.add('visible');
+				}
+			});
+		}
+		
+		// Add parallax effect to header
+		function enhanceParallax() {
+			const header = document.getElementById('fh5co-header');
+			header.classList.add('enhanced-parallax');
+			
+			window.addEventListener('scroll', function() {
+				const scrollPosition = window.pageYOffset;
+				const headerElement = document.querySelector('#fh5co-header.enhanced-parallax');
+				if (headerElement) {
+					// Adjust the background position based on scroll
+					const yPos = -(scrollPosition * 0.15);
+					headerElement.style.backgroundPosition = 'center ' + yPos + 'px';
+				}
+			});
+		}
+		
+		// Initialize animations and effects
+		document.addEventListener('DOMContentLoaded', function() {
+			// Add animation classes to sections
+			document.querySelectorAll('#fh5co-about, #fh5co-resume, #fh5co-skills, #fh5co-work, #fh5co-started')
+				.forEach(section => {
+					section.classList.add('animate-on-scroll');
+				});
+			
+			// Initial check for visible sections
+			animateSections();
+			
+			// Add scroll event listener for animations
+			window.addEventListener('scroll', animateSections);
+			
+			// Setup enhanced parallax
+			enhanceParallax();
+		});
+	</script>
+	<script>
+		const roles = ["Software Engineer", "AI Enthusiast", "Problem Solver"];
+		let roleIndex = 0;
+		let charIndex = 0;
+		const roleElement = document.getElementById("role");
+	
+		function typeRole() {
+			if (charIndex < roles[roleIndex].length) {
+				roleElement.innerHTML += roles[roleIndex].charAt(charIndex);
+				charIndex++;
+				setTimeout(typeRole, 100);
+			} else {
+				setTimeout(eraseRole, 1500);
+			}
+		}
+	
+		function eraseRole() {
+			if (charIndex > 0) {
+				roleElement.innerHTML = roles[roleIndex].substring(0, charIndex - 1);
+				charIndex--;
+				setTimeout(eraseRole, 50);
+			} else {
+				roleIndex = (roleIndex + 1) % roles.length;
+				setTimeout(typeRole, 500);
+			}
+		}
+	
+		document.addEventListener("DOMContentLoaded", typeRole);
+	</script>
+	<script>
+		function animateProjects() {
+			document.querySelectorAll('.animate-box').forEach(box => {
+				const boxTop = box.getBoundingClientRect().top;
+				if (boxTop < window.innerHeight * 0.9) {
+					box.classList.add('visible');
+				}
+			});
+		}
+		document.addEventListener("DOMContentLoaded", animateProjects);
+		window.addEventListener("scroll", animateProjects);
+	</script>
+	
+	</body>
+</html>
+
